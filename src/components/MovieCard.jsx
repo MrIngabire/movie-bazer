@@ -6,7 +6,7 @@ export default function MovieCard({ movie }) {
   return (
     <Link to={`/movie/${movie.id}`} className="flex flex-col items-start w-40 md:w-48 lg:w-56">
       {/* Poster */}
-      <div className="group relative w-full aspect-[2/3] rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition duration-300">
+      <div className="group relative w-full aspect-[2/3]  overflow-hidden shadow-xl transform hover:scale-105 transition duration-300">
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title}

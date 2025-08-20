@@ -18,7 +18,7 @@ export default function Home() {
     fetch(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`)
       .then((res) => res.json())
       .then((data) => {
-        setTrending(data.results.slice(0, 10));
+        setTrending(data.results.slice(0, 12));
         setFeatured(data.results[0]); // main hero card
       })
       .catch((error) => console.error("Error fetching trending movies:", error));
@@ -26,7 +26,7 @@ export default function Home() {
     // Fetch popular movies for recommendations
     fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}`)
       .then((res) => res.json())
-      .then((data) => setRecommended(data.results.slice(0, 10)))
+      .then((data) => setRecommended(data.results.slice(0, 12)))
       .catch((error) => console.error("Error fetching popular movies:", error));
   }, []);
 
@@ -88,7 +88,7 @@ export default function Home() {
       <MovieRow title="🔥 Trending" movies={trending} />
 
       {/* Recommended */}
-      <MovieRow title="⭐ You May Like This" movies={recommended} />
+      <MovieRow title=" You May Like This" movies={recommended} />
     </div>
   );
 }
@@ -117,7 +117,7 @@ function MovieRow({ title, movies }) {
           <Link
             key={movie.id}
             to={`/movie/${movie.id}`}
-            className="bg-gray-150 overflow-hidden hover:scale-105 transition shadow-lg rounded-lg"
+            className="bg-gray-150 overflow-hidden hover:scale-105 transition shadow-lg "
           >
             <img
               src={`${IMG_URL}${movie.poster_path}`}
