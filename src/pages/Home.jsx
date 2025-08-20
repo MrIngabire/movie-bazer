@@ -39,7 +39,7 @@ export default function Home() {
           <div className="flex-1">
             <h2 className="text-5xl font-extrabold leading-tight">
               FIND MOVIES <br />
-              <span className="text-pink-400">TV SHOWS AND MORE</span>
+              <span className="bg-gradient-to-r from-[#2203FF] to-[#C40D60] bg-clip-text text-transparent -tracking-[5px]"><big>TV SHOWS AND MORE</big></span>
             </h2>
             <p className="text-gray-400 mt-6 text-lg max-w-lg">
               Lorem Ipsum has been the industry's standard dummy text ever since
@@ -65,7 +65,7 @@ export default function Home() {
             )}
 
             {/* Front card (featured) */}
-            <div className="relative z-10">
+            <div className="relative z-10 border-d-4 border-gray-600">
               <Link to={`/movie/${featured.id}`}>
                 <img
                   src={`${IMG_URL}${featured.poster_path}`}
